@@ -1,0 +1,54 @@
+GET http://localhost:3000/api/project
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OGQyZDRkZWQ5NjRjYTNhOWFkYWQ1NiIsImlhdCI6MTczNzMwNjA0MSwiZXhwIjoxNzM3MzkyNDQxfQ.LIwOwrrfQfEJ90HqlAY4_BHLHFQj3-7LBof4W0JF654
+
+
+###
+POST http://localhost:3001/api/project
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OGQyZDRkZWQ5NjRjYTNhOWFkYWQ1NiIsImlhdCI6MTczNzMwNjA0MSwiZXhwIjoxNzM3MzkyNDQxfQ.LIwOwrrfQfEJ90HqlAY4_BHLHFQj3-7LBof4W0JF654
+Content-Type: application/json
+
+{
+  "name": "Website Redesign test",
+  "description": "A project to redesign the corporate website.",
+  "workflowStatuses": ["to-do", "ongoing", "under review", "completed"]
+}
+
+###
+PATCH http://localhost:3001/api/project?id=678d403a07b5d804c8997c2a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OGQyZDRkZWQ5NjRjYTNhOWFkYWQ1NiIsImlhdCI6MTczNzMwNjA0MSwiZXhwIjoxNzM3MzkyNDQxfQ.LIwOwrrfQfEJ90HqlAY4_BHLHFQj3-7LBof4W0JF654
+Content-Type: application/json
+
+{
+  "userId": "",
+  "workflowStatuses": ["to-do", "ongoing", "under review"]
+}
+
+###
+PUT http://localhost:3000/api/project?id=678d403a07b5d804c8997c2a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OGQyZDRkZWQ5NjRjYTNhOWFkYWQ1NiIsImlhdCI6MTczNzMwNjA0MSwiZXhwIjoxNzM3MzkyNDQxfQ.LIwOwrrfQfEJ90HqlAY4_BHLHFQj3-7LBof4W0JF654
+Content-Type: application/json
+
+{
+  "name": "Updated Website Redesign again",
+  "description": "An updated project description for redesigning the website.",
+  "workflowStatuses": ["to-do", "ongoing", "under review"]
+  
+}
+
+###
+PATCH http://localhost:3000/api/project/users?id=678d403a07b5d804c8997c2a
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OGQyZDRkZWQ5NjRjYTNhOWFkYWQ1NiIsImlhdCI6MTczNzMwNjA0MSwiZXhwIjoxNzM3MzkyNDQxfQ.LIwOwrrfQfEJ90HqlAY4_BHLHFQj3-7LBof4W0JF654
+
+{
+  "email": "olusolasamson18@gmail.com"
+}
+
+###
+DELETE http://localhost:3000/api/project/users?id=678d403a07b5d804c8997c2a
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OGQyZDRkZWQ5NjRjYTNhOWFkYWQ1NiIsImlhdCI6MTczNzMwNjA0MSwiZXhwIjoxNzM3MzkyNDQxfQ.LIwOwrrfQfEJ90HqlAY4_BHLHFQj3-7LBof4W0JF654
+
+{
+  "email": "olusolasamson18@gmail.com"
+}

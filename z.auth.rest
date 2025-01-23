@@ -1,0 +1,22 @@
+### Register a New User
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OGQyZDRkZWQ5NjRjYTNhOWFkYWQ1NiIsImlhdCI6MTczNzMwNjA0MSwiZXhwIjoxNzM3MzkyNDQxfQ.LIwOwrrfQfEJ90HqlAY4_BHLHFQj3-7LBof4W0JF654
+
+{
+  "name": "Samson",
+  "email": "olusolasamson18@gmail.com",
+  "password": "password2"
+}
+
+
+
+### Login as an Existing User
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+Authorization: Bearer 
+
+{
+  "email": "olusolasamson18@gmail.com",
+  "password": "password2"
+}

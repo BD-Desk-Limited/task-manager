@@ -1,0 +1,31 @@
+PATCH http://localhost:3000/api/scrums?id=<scrumId>
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OGQyZDRkZWQ5NjRjYTNhOWFkYWQ1NiIsImlhdCI6MTczNzMwNjA0MSwiZXhwIjoxNzM3MzkyNDQxfQ.LIwOwrrfQfEJ90HqlAY4_BHLHFQj3-7LBof4W0JF654
+Content-Type: application/json
+
+{
+  "name": "Updated Scrum Name",
+  "description": "Updated Scrum Description"
+}
+
+###
+POST http://localhost:3000/api/scrums/task?id=<scrumId>
+Authorization: Bearer <your_jwt_token>
+Content-Type: application/json
+
+{
+  "taskId": "64b123abcde67890f1234567"
+}
+
+###
+DELETE http://localhost:3000/api/scrums/task?id=<scrumId>
+Authorization: Bearer <your_jwt_token>
+Content-Type: application/json
+
+{
+  "taskId": "64b123abcde67890f1234567"
+}
+
+
+###
+DELETE http://localhost:3000/api/scrums?id=<scrumId>
+Authorization: Bearer <your_jwt_token>
