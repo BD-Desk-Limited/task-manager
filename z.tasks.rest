@@ -1,0 +1,15 @@
+### Get All Tasks
+GET http://localhost:3001/api/tasks
+Content-Type: application/json
+
+###
+
+### Create a New Task
+POST http://localhost:3001/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Testing task 2",
+  "description": "This is a sample tas2",
+  "completed": false
+}
