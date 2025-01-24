@@ -26,6 +26,23 @@ const ScrumSchema = new mongoose.Schema(
       ref: 'User',
       required: true,
     },
+    stage: {
+      type: String,
+      default: 'to-do',
+    },
+    comments: [
+      {
+        comment: {
+          type: String,
+          required: true,
+        },
+        commenter: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'User',
+          required: true,
+        },
+      },
+    ],
   },
   { timestamps: true }
 );

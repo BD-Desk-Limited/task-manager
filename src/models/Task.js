@@ -8,9 +8,23 @@ const TaskSchema = new mongoose.Schema({
   description: { 
     type: String
   },
-  status: { 
-    type: String
+  stage: {
+    type: String,
+    default: 'to-do',
   },
+  comments: [
+    {
+      comment: {
+        type: String,
+        required: true,
+      },
+      commenter: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true,
+      },
+    },
+  ],
   assignedTo: { 
     type: mongoose.Schema.Types.ObjectId, 
     ref: 'User' 

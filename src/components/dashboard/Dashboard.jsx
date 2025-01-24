@@ -3,9 +3,10 @@ import { useProject } from "../../../contexts/ProjectContext";
 import { useRouter } from "next/navigation";
 import ProjectSummary from "./ProjectSummary";
 import TaskBoard from "./TaskBoard";
+import Backlog from "./Backklog";
 
 export default function Dashboard() {
-  const { selectedProject } = useProject();
+  const { selectedProject, setSelectedProject } = useProject();
   const [selectedTab, setSelectedTab] = useState('Board')
   const Router = useRouter();
 
@@ -38,8 +39,9 @@ export default function Dashboard() {
       </nav>
       {selectedTab== 'Project-summary'&& (<ProjectSummary selectedProject={selectedProject}/>)}
 
-      {selectedTab === 'Board' && (<TaskBoard/>)}
-      
+      {selectedTab === 'Board' && (<TaskBoard project = {selectedProject}/>)}
+
+      {selectedTab === 'Backlog' && (<Backlog project={selectedProject} setProject={setSelectedProject}/>)}
     </div>
   );
 }

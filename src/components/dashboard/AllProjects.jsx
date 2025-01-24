@@ -14,8 +14,7 @@ export default function Allprojects() {
     const fetchProjects = async () => {
       try {
         const token = localStorage.getItem('token');
-        console.log(token);
-
+        
         const response = await fetch('/api/project', {
           method: 'GET',
           headers: {

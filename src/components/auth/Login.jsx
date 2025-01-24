@@ -22,10 +22,11 @@ export default function Login() {
       });
 
       const data = await response.json();
-
+      console.log('USER ID:', data.data.user._id);
       if (response.ok) {
         // Store the token in localStorage or a cookie
         localStorage.setItem('token', data.data.token);
+        localStorage.setItem('userId', data.data.user._id);
 
         // Redirect to a dashboard or home page
         router.push('/pages/dashboard');

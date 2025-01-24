@@ -2,13 +2,22 @@ import connectDB from '@/lib/db';
 import Task from '@/models/Task';
 import { verifyToken } from '../middleware/authMiddleware';
 
-// Handle GET requests to fetch all tasks
+// Handle GET requests to fetch all tasks for a specific project
 export async function GET(req) {
   try {
     await connectDB();
     await verifyToken(req);
 
-    const tasks = await Task.find({});
+    const { searchParams } = new URL(req.url);
+    const projectId = searchParams.get('projectId');
+    if (!projectId) {
+      return new Response(
+        JSON.stringify({ success: false, message: 'Project ID is required' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const tasks = await Task.find({ project: projectId });
     return new Response(
       JSON.stringify({ success: true, data: tasks }),
       { status: 200, headers: { 'Content-Type': 'application/json', 'Authorization': req.headers.get('authorization') } }
